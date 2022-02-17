@@ -1,4 +1,4 @@
-# Lab 1: ONDREJ KUDELA
+# Lab 1: Ondřej Kudela
 
 ### De Morgan's laws
 
