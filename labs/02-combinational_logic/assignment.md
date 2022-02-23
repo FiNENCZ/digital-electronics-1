@@ -59,13 +59,13 @@
         report "Stimulus process started" severity note;
 
         -- First test case
-        s_b <= "0001"; -- Such as "0001" if ID = xxxx13
-        s_a <= "0011";        -- Such as "0011" if ID = xxxx13
+        s_b <= "0010"; -- Such as "0010" if ID = xxxx10
+        s_a <= "0000";        -- Such as "0011" if ID = xxxx10
         wait for 100 ns;
         -- Expected output
-        assert ((s_B_greater_A = '0') and
+        assert ((s_B_greater_A = '1') and
                 (s_B_equals_A  = '0') and
-                (s_B_less_A    = '1'))
+                (s_B_less_A    = '0'))
         -- If false, then report an error
         report "Input combination 0001, 0011 FAILED" severity error;
 
