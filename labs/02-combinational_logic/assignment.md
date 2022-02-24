@@ -1,42 +1,86 @@
-# Lab 1: Ondřej Kudela
 
-### De Morgan's laws
+| **Dec. equivalent** | **B[1:0]** |**A[1:0]** | **B is greater than A** | **B equals A** | **B is less than A** |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| 0 | 0 0 | 0 0 | 0 | 1 | 0 |
+| 1 | 0 0 | 0 1 | 0 | 0 | 1 |
+| 2 | 0 0 | 1 0 | 0 | 0 | 1 |
+| 3 | 0 0 | 1 1 | 0 | 0 | 1 |
+| 4 | 0 1 | 0 0 | 1 | 0 | 0 |
+| 5 | 0 1 | 0 1 | 0 | 1 | 0 |
+| 6 | 0 1 | 1 0 | 0 | 0 | 1 |
+| 7 | 0 1 | 1 1 | 0 | 0 | 1 |
+| 8 | 1 0 | 0 0 | 1 | 0 | 0 |
+| 9 | 1 0 | 0 1 | 1 | 0 | 0 |
+| 10 | 1 0 | 1 0 | 0 | 1 | 0 |
+| 11 | 1 0 | 1 1 | 0 | 0 | 1 |
+| 12 | 1 1 | 0 0 | 1 | 0 | 0 |
+| 13 | 1 1 | 0 1| 1 | 0 | 0 |
+| 14 | 1 1 | 1 0 | 1 | 0 | 0 |
+| 15 | 1 1 | 1 1 | 0 | 1 | 0 |
 
-1. Equations of all three versions of logic function f(c,b,a):
-
-   ![Logic function](Výstřižek.PNG)
 
 
-2. Listing of VHDL architecture from design file (`design.vhd`) for all three functions. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
+|**[B0,B1]/[A0,A1]/** |**00** | **01** | **11** | **11** |
+| :-: | :-: | :-: | :-: | :-: |
+| 00 | 0 0 | 0 0 | 0 | 1 | 0 |
+| 01 | 0 0 | 0 1 | 0 | 0 | 1 |
+| 11 | 0 0 | 1 0 | 0 | 0 | 1 |
+| 10 | 0 0 | 1 1 | 0 | 0 | 1 |
+
+
+# Lab 2: Ondřej Kudela
+
+### 2-bit comparator
+
+1. Karnaugh maps for other two functions:
+
+   Greater than:
+
+   ![K-maps](images/kmap_empty.png)
+
+   Less than:
+
+   ![K-maps](images/kmap_empty.png)
+
+2. Equations of simplified SoP (Sum of the Products) form of the "greater than" function and simplified PoS (Product of the Sums) form of the "less than" function.
+
+   ![Logic functions](images/comparator_min.png)
+
+### 4-bit comparator
+
+1. Listing of VHDL stimulus process from testbench file (`testbench.vhd`) with at least one assert (use BCD codes of your student ID digits as input combinations). Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
+
+   Last two digits of my student ID: **xxxx??**
 
 ```vhdl
-architecture dataflow of gates is
-begin
-    f_org_o  <= (not(b_i) and a_i) or (not(c_i) and not(b_i));
-    f_nand_o <= not(not(not(b_i) and a_i) and not(not(c_i) and not(b_i))); 
-    f_nor_o  <= not(b_i or not(a_i or not(c_i)) or b_i); 
-end architecture dataflow;
+    p_stimulus : process
+    begin
+        -- Report a note at the beginning of stimulus process
+        report "Stimulus process started" severity note;
+
+        -- First test case
+        s_b <= "0001"; -- Such as "0001" if ID = xxxx10
+        s_a <= "0000";        -- Such as "0000" if ID = xxxx10
+        wait for 100 ns;
+        -- Expected output
+        assert ((s_B_greater_A = '1') and
+                (s_B_equals_A  = '0') and
+                (s_B_less_A    = '0'))
+        -- If false, then report an error
+        report "Input combination 0001, 0000 FAILED" severity error;
+
+        -- Report a note at the end of stimulus process
+        report "Stimulus process finished" severity note;
+        wait;
+    end process p_stimulus;
 ```
 
-3. Complete table with logic functions' values:
+2. Text console screenshot during your simulation, including reports.
 
-| **c** | **b** |**a** | **f(c,b,a)_ORG** | **f(c,b,a)_NAND** | **f(c,b,a)_NOR** |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| 0 | 0 | 0 | 1 | 1 | 1 |
-| 0 | 0 | 1 | 1 | 1 | 1 |
-| 0 | 1 | 0 | 0 | 0 | 0 |
-| 0 | 1 | 1 | 0 | 0 | 0 |
-| 1 | 0 | 0 | 0 | 0 | 0 |
-| 1 | 0 | 1 | 1 | 1 | 1 |
-| 1 | 1 | 0 | 0 | 0 | 0 |
-| 1 | 1 | 1 | 0 | 0 | 0 |
+   ![your figure]()
 
-### Distributive laws
+3. Link to your public EDA Playground example:
 
-1. Screenshot with simulated time waveforms. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
+https://www.edaplayground.com/x/PfX5
 
-   ![your figure](prubehy.PNG)
-
-2. Link to your public EDA Playground example:
-
-   [LAB01 - link](https://www.edaplayground.com/x/vE_s)
+   [https://www.edaplayground.com/...](https://www.edaplayground.com/...)
