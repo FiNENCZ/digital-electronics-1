@@ -78,10 +78,9 @@
 
 2. Text console screenshot during your simulation, including reports.
 
-   ![your figure]()
+   ![Simulation](sim.PNG)
+   ![Reports](log.PNG)
 
 3. Link to your public EDA Playground example:
 
 https://www.edaplayground.com/x/PfX5
-
-   [https://www.edaplayground.com/...](https://www.edaplayground.com/...)
