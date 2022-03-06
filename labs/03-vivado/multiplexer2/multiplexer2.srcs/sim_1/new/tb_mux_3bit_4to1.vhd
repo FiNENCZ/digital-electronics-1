@@ -42,7 +42,7 @@ architecture Behavioral of tb_mux_3bit_4to1 is
     signal s_b       : std_logic_vector(3 - 1 downto 0);
     signal s_a       : std_logic_vector(3 - 1 downto 0);
     signal s_s       : std_logic_vector(2 - 1 downto 0);
-    signal s_f       : std_logic_vector(3 - 1 downto 0);
+    signal s_f       : std_logic_vector(3 - 1 downto 0);  
     
 begin
 
@@ -61,19 +61,19 @@ begin
     
 s_a <= "101";
 s_s <= "00";
-wait for 20 ns;
+wait for 30 ns;
 
 s_b <= "010";
 s_s <= "01";
-wait for 20 ns;
+wait for 30 ns;
 
 s_c <= "001";
 s_s <= "10";
-wait for 20 ns;
+wait for 30 ns;
 
 s_d <= "100";
 s_s <= "11";
-wait for 20 ns;
+wait for 30 ns;
 
     
 end process p_stimulus;

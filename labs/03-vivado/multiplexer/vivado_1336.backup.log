@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Mar  6 10:14:25 2022
+# Process ID: 1336
+# Current directory: D:/VHDL/xkudel13/digital-electronics-1/labs/03-vivado/multiplexer
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7148 D:\VHDL\xkudel13\digital-electronics-1\labs\03-vivado\multiplexer\multiplexer.xpr
+# Log file: D:/VHDL/xkudel13/digital-electronics-1/labs/03-vivado/multiplexer/vivado.log
+# Journal file: D:/VHDL/xkudel13/digital-electronics-1/labs/03-vivado/multiplexer\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/VHDL/xkudel13/digital-electronics-1/labs/03-vivado/multiplexer/multiplexer.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Documents/xkudel13/digital-electronics-1/labs/03-vivado/multiplexer' since last save.
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'D:/VHDL/xkudel13/digital-electronics-1/labs/03-vivado/multiplexer/multiplexer.ip_user_files', nor could it be found using path 'D:/Documents/xkudel13/digital-electronics-1/labs/03-vivado/multiplexer/multiplexer.ip_user_files'.
+Scanning sources...
+Finished scanning sources
+CRITICAL WARNING: [Board 49-67] The board_part definition was not found for digilentinc.com:nexys-a7-50t:part0:1.0. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.
+INFO: [Project 1-230] Project 'multiplexer.xpr' upgraded for this version of Vivado.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xillinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 982.777 ; gain = 0.000
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Mar  6 10:21:48 2022...
