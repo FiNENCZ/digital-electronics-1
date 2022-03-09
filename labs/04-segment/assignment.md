@@ -5,18 +5,88 @@
 1. Listing of VHDL stimulus process from testbench file (`tb_hex_7seg.vhd`) with asserts. Verify all input combinations. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
 
 ```vhdl
-    p_stimulus : process
+ p_stimulus : process
     begin
         report "Stimulus process started" severity note;
 
-        -- First test case
+        -- 1. test case
         s_hex <= "0000"; wait for 50 ns;
         assert (s_seg = "0000001")
         report "Input combination 0000 FAILED" severity error;
-
-
-        -- WRITE OTHER TEST CASES HERE
-
+        
+        -- 2. test case
+        s_hex <= "0001"; wait for 50 ns;
+        assert (s_seg = "1001111")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 3. test case
+        s_hex <= "0010"; wait for 50 ns;
+        assert (s_seg = "0000110")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 4. test case
+        s_hex <= "0011"; wait for 50 ns;
+        assert (s_seg = "1000111")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 5. test case
+        s_hex <= "0100"; wait for 50 ns;
+        assert (s_seg = "1001100")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 6. test case
+        s_hex <= "0101"; wait for 50 ns;
+        assert (s_seg = "0100100")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 7. test case
+        s_hex <= "0110"; wait for 50 ns;
+        assert (s_seg = "0100000")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 8. test case
+        s_hex <= "0111"; wait for 50 ns;
+        assert (s_seg = "0001111")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 9. test case
+        s_hex <= "1000"; wait for 50 ns;
+        assert (s_seg = "0000000")
+        report "Input combination 0000 FAILED" severity error;
+        -- 10. test case
+        s_hex <= "1001"; wait for 50 ns;
+        assert (s_seg = "0000100")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 11. test case
+        s_hex <= "1010"; wait for 50 ns;
+        assert (s_seg = "0001000")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 12. test case
+        s_hex <= "1011"; wait for 50 ns;
+        assert (s_seg = "1100000")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 13. test case
+        s_hex <= "1100"; wait for 50 ns;
+        assert (s_seg = "0110001")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 14. test case
+        s_hex <= "1101"; wait for 50 ns;
+        assert (s_seg = "1000010")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 15. test case
+        s_hex <= "1110"; wait for 50 ns;
+        assert (s_seg = "0110000")
+        report "Input combination 0000 FAILED" severity error;
+        
+        -- 16. test case
+        s_hex <= "1111"; wait for 50 ns;
+        assert (s_seg = "0111000")
+        report "Input combination 0000 FAILED" severity error;
 
         report "Stimulus process finished" severity note;
         wait;
