@@ -23,11 +23,11 @@ end entity tb_hex_7seg;
 -- Architecture body for testbench
 ------------------------------------------------------------
 architecture testbench of tb_hex_7seg is
+
     -- Local signals
     signal s_hex  : std_logic_vector(3 downto 0);
     signal s_seg  : std_logic_vector(6 downto 0);
-    signal s_led  : std_logic_vector(7 downto 0);
-    signal s_SW  : std_logic_vector(3 downto 0);
+
 
 begin
     -- Connecting testbench signals with decoder entity
@@ -36,12 +36,6 @@ begin
         port map(
             hex_i => s_hex,
             seg_o => s_seg
-        );
-        
-            uut_top: entity work.top
-        port map(
-            SW => s_SW,
-            led => s_led
         );
 
     --------------------------------------------------------
@@ -129,18 +123,9 @@ begin
         s_hex <= "1111"; wait for 50 ns;
         assert (s_seg = "0111000")
         report "Input combination 0000 FAILED" severity error;
-        
-        s_SW <= "0000";
-        wait for 30 ns;
-        s_SW <= "1101";
-        wait for 30 ns;
-        s_SW <= "1001";
-        wait for 30 ns;
-        s_SW <= "0100";
-        wait for 30 ns;
+
         report "Stimulus process finished" severity note;
         wait;
-        
     end process p_stimulus;
 
 end architecture testbench;

@@ -22,6 +22,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -62,12 +63,14 @@ begin
 
     -- Connect one common anode to 3.3V
     AN <= b"1111_0111";
-
     -- Display input value on LEDs
     LED(3 downto 0) <= SW;
     LED(4) <= '1' when SW = "0000";
     LED(5) <= '1' when SW > "1001";
-    
+    LED(6) <= '1' when SW(0) = '1';
+    LED(7) <= '1' when SW = "0001" or SW = "0010" or SW = "0100" or SW = "1000";
+     
+
     
 
     --------------------------------------------------------------------
