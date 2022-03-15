@@ -1,10 +1,12 @@
 D-type FF
 | **clk** | **d** | **q(n)** | **q(n+1)** | **comments** |
 | :-: | :-: | :-: | :-: | :-: |
-| 0 | x | 0 | q | 0 |  
-| 1 | x | 0 | 1 | 1 |
-| ↑ | 0 | 1 | 0 | 0 | 
+| 0 | x | q | q | 0 |  
+| 1 | x | q | 1 | 1 |
+| ↑ | 0 | 0 | 0 | 0 | 
 | ↑ | 1 | 1 | 1 | 0 | 
+![image](https://user-images.githubusercontent.com/99534053/158456120-8e3c9f1c-d18d-4f00-94ce-6c196252af68.png)
+
 
 JK-type FF
 
