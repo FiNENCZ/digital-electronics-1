@@ -5,6 +5,7 @@ D-type FF
 | 1 | x | q | 1 | 1 |
 | ↑ | 0 | 0 | 0 | 0 | 
 | ↑ | 1 | 1 | 1 | 0 | 
+
 ![image](https://user-images.githubusercontent.com/99534053/158456120-8e3c9f1c-d18d-4f00-94ce-6c196252af68.png)
 
 
