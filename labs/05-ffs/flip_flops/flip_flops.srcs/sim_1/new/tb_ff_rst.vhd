@@ -19,21 +19,33 @@ architecture testbench of tb_ff_rst is
     signal s_clk_100MHz : std_logic;
     signal s_rst        : std_logic;
     signal s_data       : std_logic;
-    signal s_t          : std_logic;
     signal s_d_q        : std_logic;
     signal s_d_q_bar    : std_logic;
+    signal s_t       : std_logic;
+    signal s_t_q        : std_logic;
+    signal s_t_q_bar    : std_logic;
 
 begin
     --Connecting testbench signals with d_ff_rst entity
     -- (Unit Under Test)
  
-      uut_t_ff_rst : entity work.t_ff_rst
+    uut_d_ff_rst : entity work.d_ff_rst
+        port map(
+            clk   => s_clk_100MHz,
+            rst   => s_rst,
+            d     => s_data,
+            --s_q   => s_q,
+            q     => s_d_q,
+            q_bar => s_d_q_bar
+        );
+        
+     uut_t_ff_rst : entity work.t_ff_rst
         port map(
             clk   => s_clk_100MHz,
             rst   => s_rst,
             t     => s_t,
-            q     => s_d_q,
-            q_bar => s_d_q_bar
+            q     => s_t_q,
+            q_bar => s_t_q_bar
         );
         
 
@@ -56,12 +68,15 @@ begin
     --------------------------------------------------------
     p_reset_gen : process
     begin
-        s_rst <= '0'; wait for 100 ns;
-        s_rst <= '1'; wait for 100 ns;
-        s_rst <= '0'; wait for 100 ns;
-        s_rst <= '1'; wait for 100 ns;
-        s_rst <= '0'; wait for 100 ns;
-        s_rst <= '1'; wait for 100 ns;
+        s_rst <= '1'; wait for 10 ns;
+        s_rst <= '0'; wait for 80 ns;
+        s_rst <= '1'; wait for 40 ns;
+        s_rst <= '0'; wait for 300 ns;
+        --s_rst <= '1'; wait for 50 ns;
+        --s_rst <= '0'; wait for 50 ns;
+        --s_rst <= '1'; wait for 50 ns;
+       -- s_rst <= '0'; wait for 50 ns;
+       -- s_rst <= '1'; wait for 50 ns;
 
         wait;
     end process p_reset_gen;
@@ -72,23 +87,34 @@ begin
     p_stimulus : process
     begin
         report "Stimulus process started" severity note;
-        --s_data <='0'; wait for 40 ns;
-        --s_data <='1'; wait for 40 ns;
-        --s_data <='0'; wait for 40 ns;
-       -- s_data <='1'; wait for 40 ns;
-        --s_data <='0'; wait for 40 ns;
-        --s_data <='1'; wait for 40 ns;
-        --s_data <='0'; wait for 40 ns;
-       -- s_data <='1'; wait for 40 ns;
-        --s_data <='0'; wait for 40 ns;
-        --s_data <='1'; wait for 40 ns;
-        --s_data <='0'; wait for 40 ns;
-        --s_data <='1'; wait for 40 ns;
-        s_t <='0'; wait for 40 ns;
-        s_t <='1'; wait for 40 ns;
 
+        s_data <='0'; wait for 40 ns;
+        s_data <='1'; wait for 40 ns;
+        s_data <='0'; wait for 40 ns;
+        s_data <='1'; wait for 40 ns;
+        s_data <='0'; wait for 40 ns;
+        s_data <='1'; wait for 40 ns;
+        s_data <='0'; wait for 40 ns;
+        s_data <='1'; wait for 40 ns;
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
+    
+        p_ttype : process
+    begin
+        report "Stimulus process started" severity note;
+
+        s_t <='0'; wait for 40 ns;
+        s_t <='1'; wait for 40 ns;
+        s_t <='0'; wait for 40 ns;
+        s_t <='1'; wait for 40 ns;
+        s_t <='0'; wait for 40 ns;
+        s_t <='1'; wait for 40 ns;
+        s_t <='0'; wait for 40 ns;
+        s_t <='1'; wait for 40 ns;
+        report "Stimulus process finished" severity note;
+        wait;
+    end process p_ttype;
+
 
 end architecture testbench;
