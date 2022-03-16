@@ -9,10 +9,12 @@ architecture Behavioral of t_ff_rst is
     signal s_q : std_logic;
 begin
     --------------------------------------------------------
-    -- p_d_ff_rst:
-    -- D type flip-flop with a high-active sync reset,
+    -- p_t_ff_rst:
+    -- T type flip-flop with a high-active synchro reset,
     -- rising-edge clk.
-    -- q(n+1) = d
+    -- q(n+1) = t./q(n) + /t.q(n)
+    -- q(n+1) =  q(n) if t = 0 (no change)
+    -- q(n+1) = /q(n) if t = 1 (inversion)
     --------------------------------------------------------
     p_d_ff_rst : process(clk)
     begin
