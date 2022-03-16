@@ -1,4 +1,7 @@
 D-type FF
+
+![image](https://user-images.githubusercontent.com/99534053/158532798-06093ac5-86c9-483a-a1db-8a939e760ff0.png)
+
 | **clk** | **d** | **q(n)** | **q(n+1)** | **comments** |
 | :-: | :-: | :-: | :-: | :-: |
 | 0 | 0 | 0 | 0 | 0 |  
