@@ -40,3 +40,8 @@
 1. Image of the top layer structure including both counters, ie a 4-bit bidirectional counter from *Part 4* and a 16-bit counter with a 10 ms time base from *Experiments on your own*. The image can be drawn on a computer or by hand. Always name all inputs, outputs, components and internal signals!
 
    ![your figure]()
+   
+   In Vivado:
+   
+   ![image](https://user-images.githubusercontent.com/99534053/159765843-90973d61-4c6a-403e-b76b-4dc294fa3649.png)
+
