@@ -34,8 +34,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity top is
     port(
         CLK100MHZ      : in  std_logic; 
-        SW             : in  std_logic; 
-        LED            : out std_logic_vector(3 downto 0);
+        SW0            : in  std_logic;
+        SW1            : in  std_logic;
+        LED            : out std_logic_vector(15 downto 0);
         CA             : out std_logic; 
         CB             : out std_logic; 
         CC             : out std_logic; 
@@ -44,6 +45,7 @@ entity top is
         CF             : out std_logic; 
         CG             : out std_logic; 
         AN             : out std_logic_vector(7 downto 0); 
+        BTND           : in  std_logic;
         BTNC           : in  std_logic 
     );
 end top;
@@ -57,12 +59,16 @@ architecture Behavioral of top is
   signal s_en  : std_logic;
   -- Internal counter
   signal s_cnt : std_logic_vector(4 - 1 downto 0);
+  
+    signal s_en2  : std_logic;
+  -- Internal counter
+  signal s_cnt2 : std_logic_vector(16 - 1 downto 0);
 
 begin
 
   --------------------------------------------------------------------
   -- Instance (copy) of clock_enable entity
-  clk_en0 : entity work.clock_enable
+  clk_en1 : entity work.clock_enable
       generic map(
           g_MAX => 25000000
       )
@@ -74,16 +80,37 @@ begin
 
   --------------------------------------------------------------------
   -- Instance (copy) of cnt_up_down entity
-  bin_cnt0 : entity work.cnt_up_down
+  bin_cnt1 : entity work.cnt_up_down
      generic map(
            g_CNT_WIDTH => 4
       )
       port map(
           clk   => CLK100MHZ,
           reset => BTNC,
-          cnt_up_i => SW,
+          cnt_up_i => SW0,
           cnt_o => s_cnt,
           en_i  => s_en
+      );
+
+  clk_en2 : entity work.clock_enable
+      generic map(
+          g_MAX => 1000000
+      )
+      port map(
+          clk   => CLK100MHZ,
+          reset => BTND,
+          ce_o  => s_en2
+      );      
+bin_cnt2 : entity work.cnt_up_down
+     generic map(
+           g_CNT_WIDTH => 16
+      )
+      port map(
+          clk   => CLK100MHZ,
+          reset => BTND,
+          cnt_up_i => SW1,
+          cnt_o => s_cnt2,
+          en_i  => s_en2
       );
 
   --------------------------------------------------------------------
@@ -104,6 +131,6 @@ begin
   AN <= b"1111_1110";
 
   -- Display counter values on LEDs
-  LED(3 downto 0) <= s_cnt;
+  LED(15 downto 0) <= s_cnt2;
 
 end architecture Behavioral;
