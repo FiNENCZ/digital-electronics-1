@@ -1,6 +1,5 @@
 
-![image](https://user-images.githubusercontent.com/99534053/160382739-6959726e-197a-4384-a046-2ff2b832488e.png)
-
+![wavedrom](https://user-images.githubusercontent.com/99534053/160382873-1ad13f18-7d8e-4c13-91a4-35a86499e6f0.png)
 
 
 ```javascript
