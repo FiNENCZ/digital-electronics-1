@@ -74,8 +74,8 @@ begin
     -- the frequency of the clock signal is 100 MHz.
     clk_en0 : entity work.clock_enable
         generic map(
-            g_MAX => 1 -- FOR SIMULATION PURPOSE ONLY !!!
-            -- FOR IMPLEMENTATION: g_MAX = 250 ms / (1/100 MHz)
+            g_MAX => 1 -- FOR SIMULATION PURPOSE 1 !!!
+            -- FOR IMPLEMENTATION: g_MAX = 250 ms / (1/100 MHz) = 25000000
         )
         port map(
             clk   => clk,
@@ -116,7 +116,47 @@ begin
                         end if;
 
                     when WEST_GO =>
-                        -- WRITE OTHER STATES HERE
+                    -- Count up to c_DELAY_4SEC
+                        if (s_cnt < c_DELAY_4SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            -- Move to the next state
+                            s_state <= WEST_WAIT;
+                            -- Reset local counter value
+                            s_cnt <= c_ZERO;
+                        end if;
+                        
+                    when WEST_WAIT =>
+                        if (s_cnt < c_DELAY_2SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            s_state <= STOP2;
+                            s_cnt <= c_ZERO;
+                        end if;
+
+                    when STOP2 =>
+                        if (s_cnt < c_DELAY_1SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            s_state <= SOUTH_GO;
+                            s_cnt <= c_ZERO;
+                        end if;
+
+                    when SOUTH_GO =>
+                        if (s_cnt < c_DELAY_4SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            s_state <= SOUTH_WAIT;
+                            s_cnt <= c_ZERO;
+                        end if;
+                        
+                    when SOUTH_WAIT =>
+                        if (s_cnt < c_DELAY_2SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            s_state <= STOP1;
+                            s_cnt <= c_ZERO;
+                        end if;
 
 
                     -- It is a good programming practice to use the 
@@ -144,9 +184,20 @@ begin
                 south_o <= c_RED;
                 west_o  <= c_RED;
             when WEST_GO =>
-                -- WRITE OTHER STATES HERE
-
-
+                south_o <= c_RED;
+                west_o  <= c_GREEN;
+            when WEST_WAIT =>
+                south_o <= c_RED;
+                west_o  <= c_YELLOW;
+            when STOP2 =>
+                south_o <= c_RED;
+                west_o  <= c_RED;
+            when SOUTH_GO =>
+                south_o <= c_GREEN;
+                west_o  <= c_RED;
+            when SOUTH_WAIT =>
+                south_o <= c_YELLOW;
+                west_o  <= c_RED;
             when others =>
                 south_o <= c_RED;
                 west_o  <= c_RED;
