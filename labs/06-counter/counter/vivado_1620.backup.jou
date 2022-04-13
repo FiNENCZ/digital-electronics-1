@@ -1,0 +1,76 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Mar 23 13:34:50 2022
+# Process ID: 1620
+# Current directory: D:/VHDL/xkudel13/digital-electronics-1/labs/06-counter/counter
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5376 D:\VHDL\xkudel13\digital-electronics-1\labs\06-counter\counter\counter.xpr
+# Log file: D:/VHDL/xkudel13/digital-electronics-1/labs/06-counter/counter/vivado.log
+# Journal file: D:/VHDL/xkudel13/digital-electronics-1/labs/06-counter/counter\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/VHDL/xkudel13/digital-electronics-1/labs/06-counter/counter/counter.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_simulation
+source tb_cnt_up_down.tcl
+close_sim
+launch_simulation
+source tb_cnt_up_down.tcl
+close_sim
+launch_simulation
+source tb_cnt_up_down.tcl
+close_sim
+launch_simulation
+source tb_cnt_up_down.tcl
+close_sim
+launch_simulation
+source tb_cnt_up_down.tcl
+close_sim
+launch_simulation
+source tb_cnt_up_down.tcl
+close_sim
+launch_simulation
+source tb_cnt_up_down.tcl
+close_sim
+launch_simulation
+source tb_cnt_up_down.tcl
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+close_sim
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+launch_simulation
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+refresh_design
