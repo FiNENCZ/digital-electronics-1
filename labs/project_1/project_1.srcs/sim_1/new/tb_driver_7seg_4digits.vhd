@@ -30,14 +30,11 @@ architecture testbench of tb_driver_7seg_4digits is
     -- Local signals
     signal s_clk_100MHz     : std_logic;
     signal s_reset          : std_logic;
-    signal s_data0          : std_logic_vector(3 downto 0);
-    signal s_data1          : std_logic_vector(3 downto 0);
-    signal s_data2          : std_logic_vector(3 downto 0);
-    signal s_data3          : std_logic_vector(3 downto 0);
-    signal s_dpin           : std_logic_vector(3 downto 0);
+    signal s_data           : std_logic_vector(31 downto 0);
+    signal s_dpin           : std_logic_vector(7 downto 0);
     signal s_dpout          : std_logic;
     signal s_seg            : std_logic_vector(6 downto 0);
-    signal s_dig            : std_logic_vector(3 downto 0);
+    signal s_dig            : std_logic_vector(7 downto 0);
 
 
 begin
@@ -48,10 +45,7 @@ begin
          port map(
             clk          =>   s_clk_100MHz,
             reset        =>   s_reset,
-            data0_i      =>   s_data0,
-            data1_i      =>   s_data1,
-            data2_i      =>   s_data2,
-            data3_i      =>   s_data3,
+            data_i       =>    s_data,
             dp_i         =>   s_dpin,
             dp_o         =>   s_dpout,
             seg_o        =>   s_seg,
@@ -96,11 +90,11 @@ begin
     begin
         report "Stimulus process started" severity note;
         
-        s_data3 <= "0011";
-        s_data2 <= "0001";
-        s_data1 <= "0100";
-        s_data0 <= "0010";
-        s_dpin  <= "0111";
+        --s_data3 <= "0011";
+        --s_data2 <= "0001";
+       -- s_data1 <= "0100";
+       -- s_data0 <= "0010";
+       -- s_dpin  <= "0111";
         
         report "Stimulus process finished" severity note;
         wait;

@@ -44,7 +44,7 @@ entity driver_7seg_4digits is
     port(
         clk     : in  std_logic;
         reset   : in  std_logic;
-
+        data_i  : inout  std_logic_vector(31 downto 0);
         dp_i    : in  std_logic_vector(7 downto 0);
         dp_o    : out std_logic;
         seg_o   : out std_logic_vector(6 downto 0);
@@ -103,6 +103,13 @@ begin
             hex_i => s_hex,
             seg_o => seg_o
         );
+        
+    shift_array : entity work.shift_array
+        port map(
+            reset      =>   reset,
+            clk        =>   clk,
+            x          =>   data_i
+        );
 
     --------------------------------------------------------
     -- p_mux:
@@ -116,38 +123,47 @@ begin
             if (reset = '1') then
                 dp_o  <= dp_i(0);
                 dig_o <= "11111110";
+                s_hex <= data_i (3 downto 0);
             else
                 case s_cnt is
                     when "111" =>
                         dp_o  <= dp_i(7);
                         dig_o <= "01111111";
+                        s_hex <= data_i (31 downto 28);
 
                     when "110" =>
                         dp_o  <= dp_i(6);
                         dig_o <= "10111111";
+                        s_hex <= data_i (27 downto 24);
                         
                     when "101" =>
                         dp_o  <= dp_i(5);
                         dig_o <= "11011111";
+                        s_hex <= data_i (23 downto 20);
 
                     when "100" =>
                         dp_o  <= dp_i(4);
                         dig_o <= "11101111";
+                        s_hex <= data_i (19 downto 16);
                         
                     when "011" =>
                         dp_o  <= dp_i(3);
                         dig_o <= "11110111";
+                        s_hex <= data_i (15 downto 12);
 
                     when "010" =>
                         dp_o  <= dp_i(2);
                         dig_o <= "11111011";
+                        s_hex <= data_i (11 downto 8);
+                        
                     when "001" =>
                         dp_o  <= dp_i(1);
                         dig_o <= "11111101";
-
+                        s_hex <= data_i (7 downto 4);
                     when others =>
                         dp_o  <= dp_i(0);
                         dig_o <= "11111110";
+                        s_hex <= data_i (3 downto 0);
                 end case;
             end if;
         end if;
