@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Apr 19 20:20:02 2022
+# Process ID: 3468
+# Current directory: D:/VHDL/xkudel13/digital-electronics-1/labs/07-display_driver/display_driver
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7208 D:\VHDL\xkudel13\digital-electronics-1\labs\07-display_driver\display_driver\display_driver.xpr
+# Log file: D:/VHDL/xkudel13/digital-electronics-1/labs/07-display_driver/display_driver/vivado.log
+# Journal file: D:/VHDL/xkudel13/digital-electronics-1/labs/07-display_driver/display_driver\vivado.jou
+#-----------------------------------------------------------
+ststart_guopopen_project D:/VHDL/xkudel13/digital-electronics-1/labs/07-display_driver/display_driver/display_driver.xpScScanning sources..FiFinished scanning sourceININFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specifieINFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xillinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 983.043 ; gain = 0.000
+upupdate_compile_order -fileset sources_exit
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 20 06:53:33 2022...
+.

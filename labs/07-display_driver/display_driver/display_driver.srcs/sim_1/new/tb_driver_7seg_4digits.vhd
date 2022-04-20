@@ -81,7 +81,11 @@ begin
         s_reset <= '0';
         wait for 20 ns;
         s_reset <= '1';
-        wait for 120 ns;
+        wait for 100 ns;
+        s_reset <= '0';
+        wait for 300 ns;
+        s_reset <= '1';
+        wait for 50 ns;
         s_reset <= '0';
         wait;
     
