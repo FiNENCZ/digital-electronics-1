@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Documents/xkudel13/digital-electronics-1/labs/project_1/project_1.runs/impl_1'
+HD_PWD='D:/Documents/xkudel13/digital-electronics-1/labs/project_1 - záloha/project_1.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -1,0 +1,53 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Apr 20 07:11:14 2022
+# Process ID: 16908
+# Current directory: D:/VHDL/xkudel13/digital-electronics-1/labs/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14192 D:\VHDL\xkudel13\digital-electronics-1\labs\project_1\project_1.xpr
+# Log file: D:/VHDL/xkudel13/digital-electronics-1/labs/project_1/vivado.log
+# Journal file: D:/VHDL/xkudel13/digital-electronics-1/labs/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/VHDL/xkudel13/digital-electronics-1/labs/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse D:/VHDL/xkudel13/digital-electronics-1/labs/project_1/project_1.srcs/sources_1/new/shift_array.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/VHDL/xkudel13/digital-electronics-1/labs/project_1/project_1.srcs/sim_1/new/tb_shift_array.vhd w ]
+add_files -fileset sim_1 D:/VHDL/xkudel13/digital-electronics-1/labs/project_1/project_1.srcs/sim_1/new/tb_shift_array.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_shift_array [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_shift_array.tcl
+close_sim
+launch_simulation
+source tb_shift_array.tcl
+close_sim
+launch_simulation
+launch_simulation
+source tb_shift_array.tcl
+relaunch_sim
+close_sim
+launch_simulation
+source tb_shift_array.tcl
+close_sim
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_driver_7seg_4digits [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source tb_driver_7seg_4digits.tcl
+close_sim
