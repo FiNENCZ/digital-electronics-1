@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2020.1 (64-bit)
-# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
-# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Wed Apr 20 10:49:34 2022
-# Process ID: 12024
-# Current directory: D:/Documents/xkudel13/digital-electronics-1/labs/project_2/project_2.runs/synth_1
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Apr 23 12:29:27 2022
+# Process ID: 14104
+# Current directory: D:/VHDL/xkudel13/digital-electronics-1/labs/project_2/project_2.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: D:/Documents/xkudel13/digital-electronics-1/labs/project_2/project_2.runs/synth_1/top.vds
-# Journal file: D:/Documents/xkudel13/digital-electronics-1/labs/project_2/project_2.runs/synth_1\vivado.jou
+# Log file: D:/VHDL/xkudel13/digital-electronics-1/labs/project_2/project_2.runs/synth_1/top.vds
+# Journal file: D:/VHDL/xkudel13/digital-electronics-1/labs/project_2/project_2.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace

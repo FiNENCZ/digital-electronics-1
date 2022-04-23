@@ -57,7 +57,6 @@ begin
   driver_seg_4 : entity work.driver_7seg_4digits
       port map(
           clk        => CLK100MHZ,
-          clk1       => CLK100MHZ,
           
           reset      => BTNC,
           

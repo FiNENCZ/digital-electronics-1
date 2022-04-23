@@ -30,7 +30,7 @@ architecture testbench of tb_driver_7seg_4digits is
     -- Local signals
     signal s_clk_100MHz     : std_logic;
     signal s_reset          : std_logic;
-    signal s_data           : std_logic_vector(31 downto 0);
+    signal S_data           : std_logic_vector(31 downto 0);
     signal s_dpin           : std_logic_vector(7 downto 0);
     signal s_dpout          : std_logic;
     signal s_seg            : std_logic_vector(6 downto 0);
@@ -45,7 +45,7 @@ begin
          port map(
             clk          =>   s_clk_100MHz,
             reset        =>   s_reset,
-            --data_i       =>   s_data,
+            data_i       =>   s_data,
             dp_i         =>   s_dpin,
             dp_o         =>   s_dpout,
             seg_o        =>   s_seg,
@@ -57,7 +57,7 @@ begin
     --------------------------------------------------------
     p_clk_gen : process
     begin
-        while now < 750 ns loop -- 75 periods of 100MHz clock
+        while now < 750000 ns loop -- 75 periods of 100MHz clock
             s_clk_100MHz <= '0';
             wait for c_CLK_100MHZ_PERIOD / 2;
             s_clk_100MHz <= '1';
@@ -73,9 +73,9 @@ begin
     p_reset_gen : process
     begin
         s_reset <= '0';
-        wait for 20 ns;
+        wait for 10 ns;
         s_reset <= '1';
-        wait for 120 ns;
+        wait for 30 ns;
         s_reset <= '0';
         wait;
     
