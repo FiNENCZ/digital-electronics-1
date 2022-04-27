@@ -74,7 +74,6 @@ begin
           dig_o(7 downto 0) => AN(7 downto 0)
       );
 
-  -- Disconnect the top four digits of the 7-segment display
 
 
 end architecture Behavioral;

@@ -57,14 +57,14 @@ begin
         case hex_i is        
             when x"0" =>
                 seg_o <= "0000001"; -- 0
-            when x"1" => --H
-                seg_o <= "1001000"; -- 1
-            when x"2" => --E
-                seg_o <= "0110000"; -- 2
-            when x"3" => --L
-                seg_o <= "1110001"; -- 3
-            when x"4" => --" "
-                seg_o <= "1111111"; -- 4
+            when x"1" => 
+                seg_o <= "1001000"; -- H
+            when x"2" => 
+                seg_o <= "0110000"; -- E
+            when x"3" => 
+                seg_o <= "1110001"; -- L
+            when x"4" => 
+                seg_o <= "1111111"; -- " "
             when x"5" =>
                 seg_o <= "0100100"; -- 5
             when x"6" =>
