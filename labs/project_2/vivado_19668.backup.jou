@@ -1,0 +1,62 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Apr 23 12:03:18 2022
+# Process ID: 19668
+# Current directory: D:/VHDL/xkudel13/digital-electronics-1/labs/project_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6956 D:\VHDL\xkudel13\digital-electronics-1\labs\project_2\project_2.xpr
+# Log file: D:/VHDL/xkudel13/digital-electronics-1/labs/project_2/vivado.log
+# Journal file: D:/VHDL/xkudel13/digital-electronics-1/labs/project_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/VHDL/xkudel13/digital-electronics-1/labs/project_2/project_2.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_driver_7seg_4digits.tcl
+close_sim
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+launch_simulation
+source tb_driver_7seg_4digits.tcl
+close_sim
+launch_simulation
+source tb_driver_7seg_4digits.tcl
+close_sim
+launch_simulation
+source tb_driver_7seg_4digits.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+source tb_driver_7seg_4digits.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+set_property -name {xsim.simulate.runtime} -value {1} -objects [get_filesets sim_1]
+set_property -name {xsim.simulate.runtime} -value {1000000} -objects [get_filesets sim_1]
+relaunch_sim
+set_property -name {xsim.simulate.runtime} -value {1000000000} -objects [get_filesets sim_1]
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 ms
+close_sim
